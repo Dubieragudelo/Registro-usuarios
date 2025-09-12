@@ -3,49 +3,74 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Agenda de Contactos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos</title>
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <link rel="shortcut icon" href="./imagenes/Code.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/sweetalert2.css">
+  <script src="./js/sweetalert2.min.js"></script>
 </head>
 
 <body>
-  <!-- Formulario -->
-  <div class="form-container">
-    <h2>Ingreso de datos</h2>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre">
+  <!-- Contenedor general -->
+  <div class="contenedor">
+    <!-- Formulario -->
+    <div class="contenedor_formulario">
+      <h2 class="formulario_titulo">Ingreso de datos</h2>
 
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido">
+      <!-- Input Nombre -->
+      <label class="formulario_label">
+        <input type="text" class="formulario_input" id="inputNombre" placeholder=" " autocomplete="off" />
+        <span class="formulario_span">Nombre</span>
+      </label>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="text" id="telefono">
+      <!-- Input Apellido -->
+      <label class="formulario_label">
+        <input type="text" class="formulario_input" id="inputApellido" placeholder=" " autocomplete="off" />
+        <span class="formulario_span">Apellido</span>
+      </label>
 
-    <button id="registrar">Registrar</button>
-    <button id="mostrar">Mostrar</button>
-  </div>
+      <!-- Input Teléfono -->
+      <label class="formulario_label">
+        <input type="number" class="formulario_input" id="inputTelefono" placeholder=" " autocomplete="off" />
+        <span class="formulario_span">Teléfono</span>
+      </label>
 
-  <!-- Registros -->
-  <div class="records-container">
-    <div class="search-box">
-      <input type="text" placeholder="Nombre del contacto">
-      <button>🔍</button>
+      <!-- Botones -->
+      <div class="formulario_botones">
+        <button class="formulario_boton" id="botonRegistrar">Registrar</button>
+        <button class="formulario_boton" id="botonMostrar">Mostrar</button>
+      </div>
     </div>
 
-    <div class="records-header">Registros</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Telefono</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Aquí se llenarán los datos -->
-      </tbody>
-    </table>
+    <!-- Sección de búsqueda y tabla -->
+    <div class="contenedor_datos">
+      <div class="contenedor_filtro">
+        <input type="text" class="filtro_input" id="inputFiltro" placeholder="Nombre del contacto" autocomplete="off" />
+        <span class="icon-search" id="botonFiltrar"></span>
+      </div>
+
+      <!-- Tabla -->
+      <table class="contenedor_tabla" id="tablaDatos">
+        <caption class="tabla_titulo">Registros</caption>
+        <thead>
+          <tr>
+            <th class="tabla__campo">Id</th>
+            <th class="tabla__campo">Nombre</th>
+            <th class="tabla__campo">Apellido</th>
+            <th class="tabla__campo">Teléfono</th>
+          </tr>
+        </thead>
+        <tbody class="tabla_resultados" id="resultados"></tbody>
+      </table>
+    </div>
   </div>
+
+  <!-- Scripts -->
+  <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
